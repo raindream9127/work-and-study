@@ -1,0 +1,11 @@
+Linux/Unix
+
+mkdir <path> 在当前位置创建路径/文件path
+cd <path> 移动当前工作目录至path
+pwd 显示当前路径名
+ls 显示当前路径的文件内容
+cat <path>
+rm <path> 删除路径
+
+Windows
+

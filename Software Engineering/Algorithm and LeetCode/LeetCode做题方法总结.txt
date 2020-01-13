@@ -1,0 +1,12 @@
+runtime limit exceeded
+	陷入无限循环
+runtime error: reference binding to misaligned address <memory cannot be printed>
+	指针或数组、向量访问越界
+
+编程习惯：
+1. 使用伪代码和示意图进行演算是非常重要且良好的编程设计习惯。
+2. 不要试图一次性写出完美的循环代码，按照逻辑步骤写出后，再进行优化。另外还要注意可读性。
+
+编程技巧：
+树————
+1. C++STL中没有实现完整的树型数据结构，但是根据题目要求，有可能解决问题并不需要全部的树结构特征。利用STL库中的容器可以足够替代。
