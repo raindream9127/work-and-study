@@ -1,0 +1,32 @@
+Generating Codes/Code Assistance
+Alt+Ctrl+Insert  //Create file/class/struct from template
+Alt+Insert  //Generate class functions, like constructors, getters/setters.
+Alt+Enter  //Choose from suggested actions, navigation/generation/assistance are all included. If only one action is available, execute it.
+
+Refactoring
+Ctrl+Shift+R  //Call "refactor this" menu, having renaming, introducing variable, & extracting method
+Ctrl+R,R  //Rename the selected field/class
+Ctrl+R,M  //Extract method from the selected chunk of code
+
+Search/Navigate
+Ctrl+T  //Search/navigate anywhere
+Alt+\  //Search members within the current file
+Ctrl+Shift+T  //Filter search results with only file names
+Shift+Alt+T  //Filter search results with only symbol names
+Alt+PageUp  //Navigate up through inheritance hierarchy
+Alt+PageDown  //Navigate down through descendants
+F12  //Navigate to the selected type
+Shift+F12 //Check the usage of selected element
+Ctrl+E,H  //Call hierarchy window
+
+Postfix templates
+在想要添加模板的目标后输入以下序列即可调用输入模板，简化输入
+.beg..end  //输入一对首位迭代器
+.var  //声明一个变量来保存本目标
+.const_cast
+.reinterpret_cast
+.static_cast
+.dynamic_cast
+.new
+.make_unique  //调用make_unique<>函数
+.make_shared
