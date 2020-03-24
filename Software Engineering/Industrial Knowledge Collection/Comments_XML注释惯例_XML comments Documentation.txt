@@ -1,0 +1,59 @@
+XML documentation comments use triple forward slashes (///) and an XML formatted comment body. For example:
+/// <summary>
+/// This class does something.
+/// </summary>
+public class SomeClass
+{
+}
+****************************
+tags
+****************************
+<summary> tag adds brief information about a type or member.
+
+<remarks> tag supplements the information about types or members that the <summary> tag provides.
+
+<returns> tag describes the return value of a method declaration. 
+
+<value> tag is similar to the <returns>, except that you use it for properties.
+
+<example> tag to include an example in your XML documentation. This involves using the child <code> tag. The code tag preserves line breaks and indentation for longer examples.
+
+<para> tag to format the content within its parent tag. 
+
+<c> tag for marking part of text as code. It's like the <code> tag but inline.
+
+<exception> tag let your developers know that a method can throw specific exceptions. 
+The cref attribute represents a reference to an exception that is available from the current compilation environment. This can be any type defined in the project or a referenced assembly. The compiler will issue a warning if its value cannot be resolved.
+
+<see> tag lets you create a clickable link to a documentation page for another code element. 
+The cref is a required attribute that represents a reference to a type or its member that is available from the current compilation environment. This can be any type defined in the project or a referenced assembly.
+
+<seealso> tag in the same way you do the <see> tag. The only difference is that its content is typically placed in a "See Also" section. 
+The cref attribute represents a reference to a type or its member that is available from the current compilation environment. This can be any type defined in the project or a referenced assembly.
+
+<param> tag to describe a method's parameters. 
+The parameter the tag describes is specified in the required name attribute.
+
+<typeparam> tag just like the <param> tag but for generic type or method declarations to describe a generic parameter. 
+
+<paramref> tag is great for that sometimes you might be in the middle of describing what a method does in what could be a <summary> tag, and you might want to make a reference to a parameter. This tag is used just like <param>, but it is a self-closed tag.
+
+<typeparamref> tag just like the <paramref> tag but for generic type or method declarations to describe a generic parameter. 
+
+<list> tag to format documentation information as an unordered list, ordered list, or table. You can make an ordered list or table by changing the type attribute to number or table, respectively.
+For example:
+/// <summary>
+/// The main <c>Math</c> class. 
+/// <list type="bullet">
+/// <item>
+/// <term>Add</term>
+/// <description>Addition Operation</description>
+/// </item>
+/// </list>
+/// </summary>
+
+<inheritdoc> tag to inherit XML comments from base classes, interfaces, and similar methods. This eliminates unwanted copying and pasting of duplicate XML comments and automatically keeps XML comments synchronized.
+
+<include> tag lets you refer to comments in a separate XML file that describe the types and members in your source code, as opposed to placing documentation comments directly in your source code file.
+For example in source code:
+/// <include file='docs.xml' path='docs/contents[@name="functions"]/function/*'/>
