@@ -1,0 +1,112 @@
+// Common classes used
+class XMLElement : public XMLNode
+class XMLDocument : public XMLNode
+
+// Load xml file into program
+XMLError XMLDocument::LoadFile(const char* filename)
+// Return the first child element or the first one with given name
+XMLElement* XMLNode::FirstChildElement(const char* name = 0)
+// Return the value of the given attribute, can do comparison on-site if value is specified with 0 excluded
+const char* XMLElement::Attribute(const char* name, const char* value = 0) const
+// Get the next(right) sibling element of this node, with an optionally supplied name
+XMLElement* XMLNode::NextSiblingElement(const char* name = 0)
+// Write queried attribute value into the reference "value", if error happens, return error enum and do nothing
+XMLError XMLElement::QueryIntAttribute(const char* name, int* value) const
+// string version of previous function
+XMLError XMLElement::QueryStringAttribute(const char* name, const char** value) const
+// Save the XML file to disk with supplied name
+XMLError XMLDocument::SaveFile(const char* filename, bool compact = false)
+
+// Example of creating XML files
+#include <iostream>
+#include <string>
+#include <vector>
+#include "tinyxml2.h"
+using namespace tinyxml2;
+using namespace std;
+int main()
+{
+	XMLDocument xmlDoc;
+	// Create and insert a Root element.
+	XMLNode* pRoot = xmlDoc.NewElement("Root");
+	xmlDoc.InsertEndChild(pRoot);
+	// Create an Integer element.
+	XMLElement* pElement = xmlDoc.NewElement("IntValue");
+	pElement->SetText(10);
+	pRoot->InsertEndChild(pElement);
+	// Create a Float element.
+	pElement = xmlDoc.NewElement("FloatValue");
+	pElement->SetText(0.5f);
+	pRoot->InsertEndChild(pElement);
+	// Create a Date element.
+	pElement = xmlDoc.NewElement("Date");
+	pElement->SetAttribute("day", 26);
+	pElement->SetAttribute("month", "April");
+	pElement->SetAttribute("year", 2014);
+	pElement->SetAttribute("dateFormat", "26/04/2014");
+	pRoot->InsertEndChild(pElement);
+	// Create a List element.
+	pElement = xmlDoc.NewElement("List");
+	std::vector<int> vecList = { 1, 42, 23, 117, -50, 99, 66, 21};
+	for (const auto& item : vecList)
+	{
+		XMLElement * pListElement = xmlDoc.NewElement("Item");
+		pListElement->SetText(item);
+		pElement->InsertEndChild(pListElement);
+	}
+	pElement->SetAttribute("itemCount", vecList.size());
+	pRoot->InsertEndChild(pElement);
+	xmlDoc.SaveFile("SavedData.xml");
+	pElement = xmlDoc.FirstChildElement("Root")->FirstChildElement("IntValue");
+	pElement->SetText(42);
+	xmlDoc.SaveFile("SavedData.xml");
+	system("pause");
+	return 0;
+}
+
+// Example of created xml file
+<Root>
+    <IntValue>42</IntValue>
+    <FloatValue>0.5</FloatValue>
+    <Date day="26" month="April" year="2014" dateFormat="26/04/2014"/>
+    <List itemCount="8">
+        <Item>1</Item>
+        <Item>42</Item>
+        <Item>23</Item>
+        <Item>117</Item>
+        <Item>-50</Item>
+        <Item>99</Item>
+        <Item>66</Item>
+        <Item>21</Item>
+    </List>
+</Root>
+
+// Example of parsing xml file
+int main()
+{
+	XMLDocument xmlDoc;
+	xmlDoc.LoadFile("SavedObjects.xml");
+	XMLNode* pRoot = xmlDoc.FirstChildElement("Root");
+	// Now let's create objects from the XML file.
+	XMLElement* pElement = pRoot->FirstChildElement("GameObject");
+	while (pElement != nullptr)
+	{
+		if (strcmp(pElement->Attribute("class"), "Enemy") == 0)
+		{
+			const char* n;
+			pElement->QueryStringAttribute("name", &n);
+			int h, s;
+			pElement->QueryIntAttribute("health", &h);
+			pElement->QueryIntAttribute("speed", &s);
+		}
+		else if (strcmp(pElement->Attribute("class"), "Bullet") == 0)
+		{
+			int d, s;
+			pElement->QueryIntAttribute("damage", &d);
+			pElement->QueryIntAttribute("speed", &s);
+		}
+		pElement = pElement->NextSiblingElement("GameObject");
+	}
+	system("pause");
+	return 0;
+}
