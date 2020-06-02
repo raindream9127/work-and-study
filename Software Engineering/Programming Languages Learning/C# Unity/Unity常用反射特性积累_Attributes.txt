@@ -1,0 +1,8 @@
+[Header("xxx")]
+在此处添加一个xxx的标题，用以清晰划分组件的配置界面
+[Tooltip("xxx")]
+为后续成员添加一个tip，Unity界面下鼠标移到其上后弹出
+[SerializeField]
+将后续成员声明为Unity界面可设置，一般public成员一定可以设置，private成员不可
+[RequireComponent(typeof(xxx))]
+一般设为类的特性，表明添加该类脚本会自动添加（依赖）xxx的脚本
