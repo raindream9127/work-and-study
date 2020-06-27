@@ -1,4 +1,5 @@
-Ctrl+P ：运行游戏项目play
+通用
+Ctrl + P ：运行游戏项目play
 Alt+左键拖拽：旋转视图orbit
 左键拖拽：平移视图pan
 w：切换至移动模式move tool
@@ -6,7 +7,12 @@ q：切换至手型模式hand tool
 e：切换至旋转模式rotate tool
 r：切换至缩放模式scale tool
 F：聚焦所选物体
+**************************************************
+Curve Edit
+Ctrl + Zoom（如滚轮）：水平缩放，调整x轴的视野
+Shift + Zoom：垂直缩放，调整y轴的视野
 
+**************************************************
 Unity工具与插件
 ProGrids：设计和布局场景时的网格辅助对齐工具
 Dotween：
