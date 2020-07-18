@@ -1,0 +1,3 @@
+
+HDR向RGB+Intensity转换：
+RGB的每个因子乘以2^Intensity即可获得HDR的RGB表示值，既可以用0-1或0-255表示

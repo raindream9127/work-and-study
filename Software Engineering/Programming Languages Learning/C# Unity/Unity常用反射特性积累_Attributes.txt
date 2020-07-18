@@ -3,6 +3,11 @@
 特性属性：fileName，menuName，order
 在Asset-Create菜单中可以创建此类对象
 
+[ColorUsage]
+成员特性
+特性属性：bool hdr, bool showAlpha, order
+用于控制Inspector如何生成一个Color对象的编辑器，可设置HDR和alpha通道等
+
 [CustomEditor(typeof(xxx))]
 类特性，继承Editor
 声明为xxx组件（一般也是自定义行为脚本）的编辑器
