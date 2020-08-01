@@ -12,5 +12,5 @@ Windows
 ****************************
 dir 显示目录下的文件及子目录
 cd <path> 移动当前工作目录至path
-findstr 在目录下查找指定字符内容，有诸多选项参数，参考document
+findstr <string> <filepath> 在目录下查找指定字符内容，有诸多选项参数，document内容存疑，使用findstr /?指令获取现场帮助
 
