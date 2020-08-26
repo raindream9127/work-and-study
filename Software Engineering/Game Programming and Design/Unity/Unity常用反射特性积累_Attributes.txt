@@ -69,22 +69,29 @@ C#脚本特性
 ShaderLab材料属性特性
 ***********************************
 [Toggle(XXX)]
-float特性
+Float特性
 定义一个float为toggle，属性值为0或1。
 当取值为1，会有一个自动命名的着色器关键字被定义，该自动命名法则是将属性名全部大写后加_ON。
 XXX是自定义的着色器关键字名称，可以省略以使用上述自动命名。
 
 [Enum(XXX.XXX.XXX)]
 [Enum(XXX,N,XXX,N)]
-float特性
+Float特性
 为一个float值提供枚举选项赋值菜单。可以指定一个枚举类作为参数，或直接就地指定名值对（最多7个）。
 
-[KeywordEnum
+[KeywordEnum(xxx,yyy,zzz)]
+Float特性
+专为shader keywords设定而用的属性特性，须和#pragma multi_compile合用。
+其keywords名称为属性名_XXX，属性名_YYY，属性名_ZZZ，且#pragma预编译指令也必须以此命名。
+但在inspector中只会显示xxx，yyy和zzz的设置选项。
 
-
-[PowerSlider]
+[PowerSlider(N)]
+Range特性
+显示一个非线性的slider以设置数值，N为power值
 
 [IntRange]
+Range特性
+显示一个整数slider以设置数值
 
 [Space(N)]
 在属性前加空格，N用以控制空格数量
