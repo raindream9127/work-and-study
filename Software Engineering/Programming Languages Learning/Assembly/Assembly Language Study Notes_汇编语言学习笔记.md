@@ -1,24 +1,34 @@
 # x86处理器架构
 ## 32位x86处理器架构
 1）操作模式：
-	保护模式protected mode——一般的支持虚拟内存的模式
-	虚拟8086模式Virtual-8086——8086虚拟机，仅1MB内存，但可以创建多个
-	实地址模式Real-Address——MS-DOS模式，直接寻址，仅1MB内存和单程序
-	系统管理模式System Management——仅由操作系统和机器开发使用
+
+保护模式protected mode——一般的支持虚拟内存的模式
+
+虚拟8086模式Virtual-8086——8086虚拟机，仅1MB内存，但可以创建多个
+
+实地址模式Real-Address——MS-DOS模式，直接寻址，仅1MB内存和单程序
+
+系统管理模式System Management——仅由操作系统和机器开发使用
+
 2）地址空间：
+
 最大4GB，从 P6 处理器开始，一种被称为扩展物理寻址 (extended physical addressing) 的技术使得可以被寻址的物理内存空间增加到 64GB
+
 3）基本程序执行寄存器basic program execution registers
-——8个32位通用寄存器：
-EAX：扩展累加器extended accumulator，乘除指令默认使用。也用于子程序存放返回值。
-EBX：
-ECX：CPU 默认使用 ECX 为循环计数器
-EDX：
-EBP：扩展帧指针extended frame pointer，用于引用堆栈数据，指向当前调用堆栈帧首地址。极少作算术和传输。
-ESP：扩展堆栈指针extended stack pointer，用于寻址堆栈数据，指向调用堆栈的顶部地址。极少作算术和传输。
-ESI：扩展源变址extended source index，用于高速存储器传输指令，也常常用作基址-偏移量寻址中存放指针数据。
-EDI：扩展目的变址extended destination index，用于高速存储器传输指令
+
+- 8个32位通用寄存器：
+  - EAX：扩展累加器extended accumulator，乘除指令默认使用。也用于子程序存放返回值。
+  - EBX：
+  - ECX：CPU 默认使用 ECX 为循环计数器
+  - EDX：
+  - EBP：扩展帧指针extended frame pointer，用于引用堆栈数据，指向当前调用堆栈帧首地址。极少作算术和传输。
+  - ESP：扩展堆栈指针extended stack pointer，用于寻址堆栈数据，指向调用堆栈的顶部地址。极少作算术和传输。
+  - ESI：扩展源变址extended source index，用于高速存储器传输指令，也常常用作基址-偏移量寻址中存放指针数据。
+  - EDI：扩展目的变址extended destination index，用于高速存储器传输指令
+
 注：EAX的低16位叫AX，AX的高低8位分别叫AH和AL，以此类推（仅限ABCD这4个通用寄存器可以拆开使用）。
-——6个16位段寄存器：
+
+- 6个16位段寄存器：
 CS
 SS
 DS
