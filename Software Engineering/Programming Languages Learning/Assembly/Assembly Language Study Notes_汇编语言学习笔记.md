@@ -1,10 +1,107 @@
+# Index
+
+| x86处理器架构	|
+| --- |
+| 32位x86处理器架构 |
+| x86-64处理器架构 |
+| 汇编语言基础 |
+| --- |
+| 常用汇编器 |
+汇编语言常量	4
+汇编语言保留字/关键字	4
+标识符identifier	4
+伪指令directive	4
+指令	4
+列表文件listing file	4
+数据类型和数据定义	4
+数据操作相关运算符和指令	3
+操作数类型	4
+MOV、MOVZX、MOVSX指令	4
+LAHF、SAHF指令	4
+XCHG指令	4
+加减运算和相关指令	4
+OFFSET运算符	4
+ALIGH伪指令	4
+PTR运算符	4
+TYPE和SIZEOF运算符	4
+LENGTHOF运算符	4
+LABEL伪指令	4
+TYPEDEF运算符	4
+汇编语言条件判断	4
+布尔和比较指令	5
+检查奇偶标志	5
+置位和清除单个CPU标志	5
+JMP指令	5
+条件跳转指令	5
+LOOP相关指令	5
+32位条件控制流伪指令	5
+汇编语言整数运算	4
+逻辑移位和算术移位	5
+MUL指令	5
+IMUL指令	5
+DIV指令	5
+IDIV指令	5
+符号扩展指令	5
+ADC和SBB指令	5
+汇编语言ASCII和非压缩十进制运算	5
+压缩十进制运算	5
+汇编语言过程	4
+PUSH和POP及相关指令	5
+CALL和RET指令	5
+USES运算符	5
+汇编语言高级过程	4
+调用规范	5
+LEA指令	5
+ENTER和LEAVE指令	5
+LOCAL伪指令	5
+INVOKE伪指令	5
+ADDR运算符	5
+PROC和ENDP伪指令	5
+PROTO伪指令	5
+EXTERN伪指令	5
+Java虚拟机JVM工作原理	5
+汇编语言字符串和数组	4
+字符串基本指令	5
+汇编语言结构和宏	4
+结构体	5
+联合union	5
+宏过程简述	5
+条件汇编伪指令简述	5
+宏汇编运算符简介	5
+宏函数	5
+重复语句伪指令	5
+浮点数处理与指令编码	4
+FPU浮点数计算单元简介	4
+浮点数异常	4
+浮点数指令集	4
+FINIT初始化	4
+FLD加载浮点数值	4
+FST，FSTP保存浮点数值	4
+FCHS和FABS	4
+FADD、FADDP、FIADD	4
+FSUB、FSUBP、FISUB	4
+FMUL、FMULP、FIMUL	5
+FDIV、FDIVP、FIDIV	5
+FCOM、FCOMP、FCOMPP	5
+FWAIT指令（WAIT）	5
+其他FPU指令	5
+高级语言接口	5
+.MODEL伪指令	5
+__asm伪指令	6
+部分汇编器特殊语法积累	6
+MASM	6
+Visual Studio常用功能积累	7
+查看OBJ文件中所有过程名	7
+查看编译器生成的汇编语言代码	7
+
 # x86处理器架构
 ## 32位x86处理器架构
 1）操作模式：
-  - 保护模式protected mode——一般的支持虚拟内存的模式
-  - 虚拟8086模式Virtual-8086——8086虚拟机，仅1MB内存，但可以创建多个
-  - 实地址模式Real-Address——MS-DOS模式，直接寻址，仅1MB内存和单程序
-  - 系统管理模式System Management——仅由操作系统和机器开发使用
+
+- 保护模式protected mode——一般的支持虚拟内存的模式
+- 虚拟8086模式Virtual-8086——8086虚拟机，仅1MB内存，但可以创建多个
+- 实地址模式Real-Address——MS-DOS模式，直接寻址，仅1MB内存和单程序
+- 系统管理模式System Management——仅由操作系统和机器开发使用
 
 2）地址空间：
 
