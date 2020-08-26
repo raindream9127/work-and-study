@@ -502,6 +502,14 @@ mov al,[arrayB+1] ;AL = 20h,[]可以不加，但是习惯上加，因为arrayB�
 ```
 [reg + n] ;寄存器内容加常数
 ```
+
+  1.  A paragraph
+      with two lines.
+
+          indented code
+
+      > A block quote.
+
   - 变址操作数——寄存器加数据区标号产生一个内存位置，寄存器内容为相对偏移量：
 
 ```
