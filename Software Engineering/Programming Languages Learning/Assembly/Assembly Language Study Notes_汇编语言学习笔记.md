@@ -261,37 +261,31 @@ Visual Studio常用功能积累	7
 
 - 等号伪指令（equal-sign directive）把一个符号名称与一个整数表达式连接起来，这在汇编语言中相当于宏定义。
 
-```
-name = expression
-```
+      name = expression
 
 - EQU 伪指令把一个符号名称与一个整数表达式或一个任意文本连接起来，它有 3 种格式：
 
-```
-name EQU expression
-name EQU symbol
-name EQU <text>
-```
+      name EQU expression
+      name EQU symbol
+      name EQU <text>
 
-第一种格式中，expression 必须是一个有效整数表达式。第二种格式中，symbol 是一个已存在的符号名称，已经用 = 或 EQU 定义过了。第三种格式中，任何文本都可以岀现在<...>内。当汇编器在程序后面遇到 name 时，它就用整数值或文本来代替符号。
+  第一种格式中，expression 必须是一个有效整数表达式。第二种格式中，symbol 是一个已存在的符号名称，已经用 = 或 EQU 定义过了。第三种格式中，任何文本都可以岀现在<...>内。当汇编器在程序后面遇到 name 时，它就用整数值或文本来代替符号。
 
 - TEXTEQU 伪指令，类似于 EQU，创建了文本宏（text macro）。它有 3 种格式：第一种为名称分配的是文本；第二种分配的是已有文本宏的内容；第三种分配的是整数常量表达式：
+	
+      name TEXTEQU <text>
+      name TEXTEQU textmacro
+      name TEXTEQU %constExpr  ;%运算符的介绍见后文
 
-```	
-name TEXTEQU <text>
-name TEXTEQU textmacro
-name TEXTEQU %constExpr  ;%运算符的介绍见后文
-```
+  文本宏可以相互嵌套构建。
 
-文本宏可以相互嵌套构建。
-
-注意：在同一源代码文件中，用 EQU 定义的符号不能被重新定义，而等号=和TEXTEQU定义的符号可随时重新定义。
+  注意：在同一源代码文件中，用 EQU 定义的符号不能被重新定义，而等号=和TEXTEQU定义的符号可随时重新定义。
 
 **4）$运算符（当前地址计数器）**
 
 $运算符（当前地址计数器）返回当前程序语句的偏移量。在下例中，从当前地址计数器（$）中减去 list 的偏移量，计算得到 ListSize：
 
-```	
+```
 list BYTE 10,20,30,40
 ListSize = ($ - list)
 ```
