@@ -13,22 +13,22 @@
   - [列表文件listing file](#列表文件listing-file)
   - [数据类型和数据定义](#数据类型和数据定义)
 - [数据操作相关运算符和指令](#数据操作相关运算符和指令)
+  - [操作数类型](#操作数类型)
+  - [MOV、MOVZX、MOVSX指令](#MOVMOVZXMOVSX指令)
+  - [LAHF、SAHF指令](#LAHFSAHF指令)
+  - [XCHG指令](#XCHG指令)
+  - [加减运算和相关指令](#加减运算和相关指令)
+  - [OFFSET运算符](#OFFSET运算符)
+  - [ALIGH伪指令](#ALIGH伪指令)
+  - [PTR运算符](#PTR运算符)
+  - [TYPE和SIZEOF运算符](#TYPE和SIZEOF运算符)
+  - [LENGTHOF运算符](#LENGTHOF运算符)
+  - [LABEL伪指令](#LABEL伪指令)
+  - [TYPEDEF运算符](#TYPEDEF运算符)
+- [汇编语言条件判断](#汇编语言条件判断)
+  - [布尔和比较指令](#布尔和比较指令)
+  - [检查奇偶标志](#检查奇偶标志)
 
-  - [操作数类型]
-  - [MOV、MOVZX、MOVSX指令]
-  - [LAHF、SAHF指令]
-  - [XCHG指令]
-  - [加减运算和相关指令]
-  - [OFFSET运算符]
-  - [ALIGH伪指令]
-  - [PTR运算符]
-  - [TYPE和SIZEOF运算符]
-  - [LENGTHOF运算符]
-  - [LABEL伪指令]
-  - [TYPEDEF运算符]
-- [汇编语言条件判断]
-  - [布尔和比较指令]
-  - [检查奇偶标志]
 置位和清除单个CPU标志	5
 JMP指令	5
 条件跳转指令	5
