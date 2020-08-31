@@ -28,70 +28,69 @@
 - [汇编语言条件判断](#汇编语言条件判断)
   - [布尔和比较指令](#布尔和比较指令)
   - [检查奇偶标志](#检查奇偶标志)
-
-置位和清除单个CPU标志	5
-JMP指令	5
-条件跳转指令	5
-LOOP相关指令	5
-32位条件控制流伪指令	5
-汇编语言整数运算	4
-逻辑移位和算术移位	5
-MUL指令	5
-IMUL指令	5
-DIV指令	5
-IDIV指令	5
-符号扩展指令	5
-ADC和SBB指令	5
-汇编语言ASCII和非压缩十进制运算	5
-压缩十进制运算	5
-汇编语言过程	4
-PUSH和POP及相关指令	5
-CALL和RET指令	5
-USES运算符	5
-汇编语言高级过程	4
-调用规范	5
-LEA指令	5
-ENTER和LEAVE指令	5
-LOCAL伪指令	5
-INVOKE伪指令	5
-ADDR运算符	5
-PROC和ENDP伪指令	5
-PROTO伪指令	5
-EXTERN伪指令	5
-Java虚拟机JVM工作原理	5
-汇编语言字符串和数组	4
-字符串基本指令	5
-汇编语言结构和宏	4
-结构体	5
-联合union	5
-宏过程简述	5
-条件汇编伪指令简述	5
-宏汇编运算符简介	5
-宏函数	5
-重复语句伪指令	5
-浮点数处理与指令编码	4
-FPU浮点数计算单元简介	4
-浮点数异常	4
-浮点数指令集	4
-FINIT初始化	4
-FLD加载浮点数值	4
-FST，FSTP保存浮点数值	4
-FCHS和FABS	4
-FADD、FADDP、FIADD	4
-FSUB、FSUBP、FISUB	4
-FMUL、FMULP、FIMUL	5
-FDIV、FDIVP、FIDIV	5
-FCOM、FCOMP、FCOMPP	5
-FWAIT指令（WAIT）	5
-其他FPU指令	5
-高级语言接口	5
-.MODEL伪指令	5
-__asm伪指令	6
-部分汇编器特殊语法积累	6
-MASM	6
-Visual Studio常用功能积累	7
-查看OBJ文件中所有过程名	7
-查看编译器生成的汇编语言代码	7
+  - [置位和清除单个CPU标志](#置位和清除单个CPU标志)
+  - [JMP指令](#JMP指令)
+  - [条件跳转指令](#条件跳转指令)
+  - [LOOP相关指令](#LOOP相关指令)
+  - [32位条件控制流伪指令](#32位条件控制流伪指令)
+- [汇编语言整数运算](#汇编语言整数运算)
+  - [逻辑移位和算术移位](#逻辑移位和算术移位)
+  - [MUL指令](#MUL指令)
+  - [IMUL指令](#IMUL指令)
+  - [DIV指令](#DIV指令)
+  - [IDIV指令](#IDIV指令)
+  - [符号扩展指令](#符号扩展指令)
+  - [ADC和SBB指令](#ADC和SBB指令)
+  - [汇编语言ASCII和非压缩十进制运算](#汇编语言ASCII和非压缩十进制运算)
+  - [压缩十进制运算](#压缩十进制运算)
+- [汇编语言过程](#汇编语言过程)
+  - [PUSH和POP及相关指令](#PUSH和POP及相关指令)
+  - [CALL和RET指令](#CALL和RET指令)
+  - [USES运算符](#USES运算符)
+- [汇编语言高级过程](#汇编语言高级过程)
+  - [调用规范](#调用规范)
+  - [LEA指令](#LEA指令)
+  - [ENTER和LEAVE指令](#ENTER和LEAVE指令)
+  - [LOCAL伪指令](#LOCAL伪指令)
+  - [INVOKE伪指令](#INVOKE伪指令)
+  - [ADDR运算符](#ADDR运算符)
+  - [PROC和ENDP伪指令](#PROC和ENDP伪指令)
+  - [PROTO伪指令](#PROTO伪指令)
+  - [EXTERN伪指令](#EXTERN伪指令)
+  - [Java虚拟机JVM工作原理](#Java虚拟机JVM工作原理)
+- [汇编语言字符串和数组](#汇编语言字符串和数组)
+  - [字符串基本指令](#字符串基本指令)
+- [汇编语言结构和宏](#汇编语言结构和宏)
+  - [结构体](#结构体)
+  - [联合union](#联合union)
+  - [宏过程简述](#宏过程简述)
+  - [条件汇编伪指令简述](#条件汇编伪指令简述)
+  - [宏汇编运算符简介](#宏汇编运算符简介)
+  - [宏函数](#宏函数)
+  - [重复语句伪指令](#重复语句伪指令)
+- [浮点数处理与指令编码](#浮点数处理与指令编码)
+  - [FPU浮点数计算单元简介](#FPU浮点数计算单元简介)
+  - [浮点数异常](#浮点数异常)
+  - [浮点数指令集](#浮点数指令集)
+  - [FINIT初始化](#FINIT初始化)
+  - [FLD加载浮点数值](#FLD加载浮点数值)
+  - [FST，FSTP保存浮点数值](#FSTFSTP保存浮点数值)
+  - [FCHS和FABS](#FCHS和FABS)
+  - [FADD、FADDP、FIADD](#FADDFADDPFIADD)
+  - [FSUB、FSUBP、FISUB](#FSUBFSUBPFISUB)
+  - [FMUL、FMULP、FIMUL](#FMULFMULPFIMUL)
+  - [FDIV、FDIVP、FIDIV](#FDIVFDIVPFIDIV)
+  - [FCOM、FCOMP、FCOMPP](#FCOMFCOMPFCOMPP)
+  - [FWAIT指令（WAIT）](#FWAIT指令WAIT)
+  - [其他FPU指令](#其他FPU指令)
+- [高级语言接口](#高级语言接口)
+  - [.MODEL伪指令](#.MODEL伪指令)
+  - [__asm伪指令](#__asm伪指令)
+- [部分汇编器特殊语法积累](#部分汇编器特殊语法积累)
+  - [MASM](#MASM)
+- [Visual Studio常用功能积累](#Visual Studio常用功能积累)
+  - [查看OBJ文件中所有过程名](#查看OBJ文件中所有过程名)
+  - [查看编译器生成的汇编语言代码](#查看编译器生成的汇编语言代码)
 
 # x86处理器架构
 
