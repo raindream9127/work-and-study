@@ -84,11 +84,11 @@
   - [FWAIT指令（WAIT）](#FWAIT指令WAIT)
   - [其他FPU指令](#其他FPU指令)
 - [高级语言接口](#高级语言接口)
-  - [.MODEL伪指令](#.MODEL伪指令)
+  - [.MODEL伪指令](#MODEL伪指令)
   - [__asm伪指令](#__asm伪指令)
 - [部分汇编器特殊语法积累](#部分汇编器特殊语法积累)
   - [MASM](#MASM)
-- [Visual Studio常用功能积累](#Visual Studio常用功能积累)
+- [Visual Studio常用功能积累](#Visual-Studio常用功能积累)
   - [查看OBJ文件中所有过程名](#查看OBJ文件中所有过程名)
   - [查看编译器生成的汇编语言代码](#查看编译器生成的汇编语言代码)
 
