@@ -1,0 +1,54 @@
+************************************************
+*****Unreal Editor + Visual Studio Workflow*****
+************************************************
+1. Program in VS and build project in VS (Rebuild cost more time, so should be avoided). Debug and make sure the build is successful.
+2. Compile again in Unreal Editor (should be automatically done after build in VS) and look for errors in Unreal log.
+3. Run your game in Unreal to further debug the game.
+
+*************************************
+*****Unreal Editor Common Errors*****
+*************************************
+1. Crash on start of project/Unhandled Exception: EXCEPTION_ACCESS_VIOLATION reading address xxxxxxx
+Usually the summary of the error log will tell you where the error is located in your code. Use VS to fix it and build it.
+Also, most of the time, this problem comes when you have visited somewhere/something before it is initiated or has meaningful content in it. 
+
+2. Blueprint class doesn't execute the event handlers inherited from C++ class
+You need to create the corresponding event node in the event graph of the blueprint. Just the root node is enough.
+If you use C++ class directly to create instances, it should work fine. 
+It seems that the derived blueprint class needs to register the event first, otherwise the inherited C++ event handlers will be hidden.
+
+**************************
+*****Unreal Arributes*****
+**************************
+UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Property", meta = (AllowPrivateAccess = "true"))
+UFUNCTION(BlueprintCallable, Category = "My Category")
+
+
+********************************************
+*****Unreal Built-in Callback Functions*****
+********************************************
+virtual void Tick(float DeltaSeconds) override;
+
+
+***************************
+*****Common Techniques*****
+***************************
+//Output debug log or messages
+if (GEngine) 
+	GEngine->AddOnScreenDebugMessage(0, 1.0f, FColor::Green, FString::Printf(TEXT("Character Energy: %d"), Energy));
+UE_LOG(LogTemp, Warning, TEXT("Shu Deng %d"), xxx);
+
+//Set up player input mappings and bind the callback funtions
+void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	FInputAxisKeyMapping MoveRight("MoveRight", EKeys::D, 1.f);
+	FInputActionKeyMapping Jump("Jump", EKeys::SpaceBar, 0, 0, 0, 0);
+	
+	UPlayerInput* PlayerInput = GetWorld()->GetFirstPlayerController()->PlayerInput;
+	PlayerInput->AddAxisMapping(MoveRight);
+	PlayerInput->AddActionMapping(Jump);
+
+	InputComponent->BindAxis("MoveRight", this, &AHeroCharacter::MoveRight);
+	InputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+}
