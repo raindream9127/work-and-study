@@ -20,6 +20,7 @@
 ·error LNK2019/error LNK2001: unresolved external symbol/IDE不报错
 一般来说，这就是链接器找不到不同文件中的调用名称。而最最基本直接的原因就是在那些文件中这些调用没有实现。
 如果是没有声明的话，那IDE在编辑状态下就会报错了。
+最常见的此类错误举例：错乱的默认或带默认值的构造函数定义，等等。
 
 ·error LNK2019: unresolved external symbol/函数模板的使用
 出现这个错误的原因在于模板函数的申明与定义在不同文件中。
